@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "460327916455-chqnt2qobbeear880rfdep63tt649mfq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.pi5s.icomida",
+            "certificate_hash": "9c04969d98d31e0fb18b4970f2c722af2ac0f666"
+          }
+        },
+        {
           "client_id": "460327916455-c56gcq91rtoerfd1118sfdl00e6rtn1r.apps.googleusercontent.com",
           "client_type": 3
         }
