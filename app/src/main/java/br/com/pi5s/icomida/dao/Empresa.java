@@ -1,5 +1,6 @@
 package br.com.pi5s.icomida.dao;
 
+import java.util.Date;
 import java.util.List;
 
 public class Empresa {
@@ -8,23 +9,25 @@ public class Empresa {
     private String nomeFantasia;
     private String cnpj;
     private String inscricaoEstadual;
-    private DataHoraAtualizacao horaDataAtualizacao;
-    private Empresa empresaMatriz;
-    private List<Endereco> enderecos;
-    private List<Contato> contatos;
+    private String empresaMatriz;
+    private Date criacao;
+    private Date ultimaAtualizacao;
 
     public Empresa () {}
 
-    public Empresa(String key, String razaoSocial, String nomeFantasia, String cnpj, String inscricaoEstadual, DataHoraAtualizacao horaDataAtualizacao, Empresa empresaMatriz, List<Endereco> enderecos, List<Contato> contatos) {
-        this.key = key;
+    public Empresa(String razaoSocial, String nomeFantasia, String cnpj, String inscricaoEstadual, DataHoraAtualizacao dataHoraAtualizacao, Empresa empresaMatriz, List<Endereco> enderecos, List<Contato> contatos) {
         this.razaoSocial = razaoSocial;
         this.nomeFantasia = nomeFantasia;
         this.cnpj = cnpj;
         this.inscricaoEstadual = inscricaoEstadual;
-        this.horaDataAtualizacao = horaDataAtualizacao;
-        this.empresaMatriz = empresaMatriz;
-        this.enderecos = enderecos;
-        this.contatos = contatos;
+
+        if (null != dataHoraAtualizacao){
+            this.criacao = dataHoraAtualizacao.getCriacao();
+            this.ultimaAtualizacao = dataHoraAtualizacao.getUltimaAtualizacao();
+        }
+
+        if (null != empresaMatriz)
+            this.empresaMatriz = empresaMatriz.key;
     }
 
     public String getKey() {
@@ -67,35 +70,29 @@ public class Empresa {
         this.inscricaoEstadual = inscricaoEstadual;
     }
 
-    public DataHoraAtualizacao getHoraDataAtualizacao() {
-        return horaDataAtualizacao;
-    }
-
-    public void setHoraDataAtualizacao(DataHoraAtualizacao horaDataAtualizacao) {
-        this.horaDataAtualizacao = horaDataAtualizacao;
-    }
-
-    public Empresa getEmpresaMatriz() {
+    public String getEmpresaMatriz() {
         return empresaMatriz;
     }
 
-    public void setEmpresaMatriz(Empresa empresaMatriz) {
+    public void setEmpresaMatriz(String empresaMatriz) {
         this.empresaMatriz = empresaMatriz;
     }
 
-    public List<Endereco> getEnderecos() {
-        return enderecos;
+    public Date getCriacao() {
+        return criacao;
     }
 
-    public void setEnderecos(List<Endereco> enderecos) {
-        this.enderecos = enderecos;
+    public void setCriacao(Date criacao) {
+        this.criacao = criacao;
     }
 
-    public List<Contato> getContatos() {
-        return contatos;
+    public Date getUltimaAtualizacao() {
+        return ultimaAtualizacao;
     }
 
-    public void setContatos(List<Contato> contatos) {
-        this.contatos = contatos;
+    public void setUltimaAtualizacao(Date ultimaAtualizacao) {
+        this.ultimaAtualizacao = ultimaAtualizacao;
     }
 }
+
+
