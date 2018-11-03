@@ -1,9 +1,9 @@
 package br.com.pi5s.icomida;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class SobreActivity extends Activity {
+public class SobreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

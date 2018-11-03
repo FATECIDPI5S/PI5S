@@ -1,9 +1,9 @@
 package br.com.pi5s.icomida;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class MesasActivity extends Activity {
+public class MesasActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
