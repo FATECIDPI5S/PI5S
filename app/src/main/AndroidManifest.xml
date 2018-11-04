@@ -29,7 +29,9 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".PedidosActivity" />
-        <activity android:name=".MesasActivity"></activity>
+        <activity android:name=".MesasActivity" />
+        <activity android:name=".Login2Activity" />
+        <activity android:name=".CadastroActivity"></activity>
     </application>
 
 </manifest>
