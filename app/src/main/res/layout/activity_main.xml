@@ -1,56 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <Button
-        android:id="@+id/btnLogin"
+    <include
+        layout="@layout/app_bar_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="abrirLogin"
-        android:text="Login" />
+        android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/btnCadastrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="abrirCadastro"
-        android:text="Cadastrar" />
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:rowCount="2">
-
-        <TextView
-            android:id="@+id/tvUsuarioAtual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Usuário atual:"/>
-
-        <TextView
-            android:id="@+id/tvUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nenhum usuário logado!"/>
-
-        <TextView
-            android:id="@+id/tvUsuarioAtualUID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:text="UID:"/>
-
-        <TextView
-            android:id="@+id/tvUsuarioUID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nenhum usuário logado!"/>
-
-    </GridLayout>
-
-</LinearLayout>
+</android.support.v4.widget.DrawerLayout>
